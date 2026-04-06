@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:4000/api" || import.meta.env.VITE_SERVER_URI;
+const BASE_URL = "https://archonai-1.onrender.com/api" || import.meta.env.VITE_SERVER_URI;
 
 export const API_PATHS = {
   AUTH: {
