@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Design Tokens - Use these for consistent spacing and colors */
+  --bg-deep: #0a0a0a;
+  --bg-accent: #111111;
+  --border-subtle: #1f1f1f;
+  --cyan-glow: rgba(34, 211, 238, 0.5);
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased text-gray-200 bg-[#0a0a0a];
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom selection color for a branded feel */
+  ::selection {
+    @apply bg-cyan-500/30 text-cyan-200;
+  }
+}
+
+@layer components {
+  /* Subtle glassmorphism effect for cards and nav */
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  /* Animated gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600;
+  }
+
+  /* Modern button hover effect with glow */
+  .btn-glow {
+    @apply relative transition-all duration-300;
+  }
+  
+  .btn-glow:hover {
+    box-shadow: 0 0 25px var(--cyan-glow);
+    transform: translateY(-1px);
+  }
+}
+
+/* Custom Scrollbar for Chrome/Safari */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333333;
+}
+
+/* Subtle background noise/grain to break flat colors */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.03;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+}
