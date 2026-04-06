@@ -1,6 +1,7 @@
 import {useSelector} from "react-redux";
 import {NavLink} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
+import Icon from "../../public/favicon.svg";
 
 const Navbar = () => {
   const user = useSelector(state => state.user.userInfo);
@@ -8,8 +9,8 @@ const Navbar = () => {
   return (
     <nav className="w-full bg-deep flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
       <div className="text-2xl font-bold tracking-tighter flex items-center gap-2">
-        <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg"></div>
-        InterviewAI
+        <img src={Icon} alt="ArchonAI Logo" className="w-8 h-8"/>
+        ArchonAI
       </div>
       <div className="hidden md:flex gap-8 text-sm text-gray-400 font-medium">
 
