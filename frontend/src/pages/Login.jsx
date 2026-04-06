@@ -7,6 +7,7 @@ import { setUserInfo } from "../redux/userSlice";
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -19,6 +20,7 @@ const Login = () => {
     } catch (err) {
       // In a principal-level app, we avoid window.alert
       console.error("Authentication Failed", err);
+      setError("Invalid email or password");
     }
   };
 
@@ -83,6 +85,11 @@ const Login = () => {
               />
             </div>
 
+            {error && (
+              <div className="bg-red-500/10 border border-red-500 text-red-500 text-sm rounded-xl p-3">
+                {error}
+              </div>
+            )}
             {/* Login Button */}
             <button
               onClick={handleLogin}
@@ -114,10 +121,6 @@ const Login = () => {
         </div>
       </div>
       
-      {/* Branding Footer */}
-      <div className="absolute bottom-8 text-[10px] font-mono text-gray-800 tracking-[0.5em] uppercase pointer-events-none">
-        Interview_Intelligence_Protocol_v2.0
-      </div>
     </div>
   );
 };
