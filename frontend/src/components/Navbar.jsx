@@ -25,7 +25,7 @@ const Navbar = () => {
           <span className="text-white font-medium">Welcome, {user.name}</span>
         </div>
       ) : (
-        <button onClick={() => Navigate("/dashboard")} className="px-5 py-2.5 bg-white text-black rounded-full text-sm font-semibold hover:bg-gray-200 transition">
+        <button onClick={() => navigate("/dashboard")} className="px-5 py-2.5 bg-white text-black rounded-full text-sm font-semibold hover:bg-gray-200 transition">
           Get Started
         </button>
       )}
