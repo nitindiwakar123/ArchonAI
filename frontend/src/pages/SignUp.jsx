@@ -5,6 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 const Signup = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleSignup = async () => {
@@ -13,6 +14,7 @@ const Signup = () => {
       navigate("/login");
     } catch (err) {
       // Avoid alerts for a high-end feel
+      setError(error.message || "Registration failed. Please try again.");
       console.error("System Registration Failed", err);
     }
   };
@@ -88,6 +90,12 @@ const Signup = () => {
                 value={form.password}
               />
             </div>
+
+            {error && (
+              <div className="bg-red-500/10 border border-red-500 text-red-500 rounded-xl p-3 text-sm">
+                {error}
+              </div>
+            )}
 
             {/* Signup Button */}
             <button
