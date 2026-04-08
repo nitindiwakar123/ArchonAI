@@ -2,6 +2,7 @@ const BASE_URL = "https://archonai-1.onrender.com/api" || import.meta.env.VITE_S
 
 export const API_PATHS = {
   AUTH: {
+    GET_USER: `${BASE_URL}/auth/user`,
     LOGIN: `${BASE_URL}/auth/login`,
     SIGNUP: `${BASE_URL}/auth/signup`,
   },

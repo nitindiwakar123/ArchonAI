@@ -14,7 +14,7 @@ const Signup = () => {
       navigate("/login");
     } catch (err) {
       // Avoid alerts for a high-end feel
-      setError(error.message || "Registration failed. Please try again.");
+      setError(err.message || "Registration failed. Please try again.");
       console.error("System Registration Failed", err);
     }
   };

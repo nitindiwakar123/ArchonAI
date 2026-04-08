@@ -9,6 +9,7 @@ import AboutPage from "./pages/AboutPage";
 import Protect from "./layouts/Protect";
 
 function App() {
+
   return (
     <Routes>
       <Route path="/" element={<AppLayout />}>
